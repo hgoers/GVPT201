@@ -598,7 +598,7 @@ Note
     if_else(rbinom(n = n, size = 1, prob = 0.8) == 1, "HEADS", 
         "TAILS")
 }
-&lt;bytecode: 0x129e646c0&gt;</code></pre>
+&lt;bytecode: 0x11b6932c0&gt;</code></pre>
 </div>
 </div>
 <p>Focus on the <code>rbinom(n, size = 1, prob = 0.8)</code> part of the function. The third argument (<code>prob</code>) is the probability that <code><a href="https://rdrr.io/r/stats/Binomial.html">rbinom()</a></code> will return a one (the random variable I have assigned to heads). I set it to 0.8 (or 80%). So, our large number of trials approximated - with a good amount of precision - the Bernoulli distribution of this coin.</p>
