@@ -1,0 +1,95 @@
+---
+title: "Plotting Your Data"
+subtitle: "GVPT399F: Power, Politics, and Data"
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: auto
+    theme: solarized
+    embed-resources: true
+execute: 
+  echo: true
+  fig-align: "center"
+---
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+```
+
+## Data visualization
+
+We will use data visualization to answer the following question:
+
+> Do cars with big engines use more fuel than cars with small engines?
+
+## Set up your plot
+
+*An empty canvas!*
+
+```{r}
+ggplot(data = mpg)
+```
+
+## Map your aesthetics
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy))
+```
+
+## Add in your cars
+
+```{r}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point()
+```
+
+## Look at the relationship across all cars
+
+```{r}
+#| code-line-numbers: "3"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+## Let's look at groups in the data
+
+-   Can look at more than two interesting elements of our data.
+
+-   You can use visual elements or aesthetics (`aes`) to communicate many dimensions in your data.
+
+-   Let's look at a categorical variable: the class of car (SUV, 2 seater, pick up truck, etc.).
+
+-   *Look for meaningfully defined groups.*
+
+## Let's look at groups in the data
+
+```{r}
+#| code-line-numbers: "1"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, colour = class)) + 
+  geom_point()
+```
+
+## Look at the relationship within groups
+
+```{r}
+#| code-line-numbers: "1,3"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, colour = class)) + 
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+## Aesthetics can be isolated
+
+```{r}
+#| code-line-numbers: "2"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(aes(colour = class)) + 
+  geom_smooth(method = "lm")
+```

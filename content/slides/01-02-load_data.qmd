@@ -1,0 +1,60 @@
+---
+title: "Loading and Exploring Your Data"
+subtitle: "GVPT399F: Power, Politics, and Data"
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: auto
+    theme: solarized
+    embed-resources: true
+execute: 
+  echo: true
+  fig-align: "center"
+---
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+```
+
+## Data visualisation
+
+We will use data visualization to answer the following question:
+
+> Do cars with big engines use more fuel than cars with small engines?
+
+## Load relevant packages
+
+```{r}
+#| eval: false
+
+# Load relevant packages
+library(tidyverse)
+```
+
+## Load in relevant data
+
+```{r}
+#| eval: false
+
+# Load the data
+mpg
+```
+
+```{r}
+#| echo: false
+
+mpg |> 
+  head() |> 
+  select(1:5) |> 
+  knitr::kable()
+```
+
+## The `mpg` data set
+
+A couple of useful variables:
+
+-   `displ`: engine displacement, in liters
+
+-   `hwy`: highway miles per gallon

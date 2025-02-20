@@ -1,0 +1,201 @@
+---
+title: "Styling Your Plots"
+subtitle: "GVPT399F: Power, Politics, and Data"
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: auto
+    theme: solarized
+    embed-resources: true
+execute: 
+  echo: true
+  fig-align: "center"
+---
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+library(ggthemes)
+```
+
+## Data visualization
+
+We will use data visualization to answer the following question:
+
+> Do cars with big engines use more fuel than cars with small engines?
+
+## Add useful titles and labels
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4,5,6,7,8"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## Add useful titles and labels
+
+```{r}
+#| echo: false
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## Flexible visualization
+
+You can use visual elements to communicate your findings in engaging ways.
+
+```{r}
+#| code-line-numbers: "2"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(color = class == "2seater")) + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## Changing the look of your plots
+
+```{r}
+#| code-line-numbers: "2"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(colour = "pink") + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## Let's clean our graph up
+
+Less is more when it comes to data visualization.
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  theme_minimal() + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  ) 
+```
+
+::: aside
+All pre-set `ggplot` themes can be found in the [`ggplot` documentation](https://ggplot2.tidyverse.org/reference/ggtheme.html).
+:::
+
+## Let's clean this up
+
+```{r}
+#| echo: false
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  theme_minimal() + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## Creating your own theme
+
+```{r}
+#| eval: false
+#| code-line-numbers: "4-10"
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  theme(
+    legend.position = "bottom",
+    panel.grid = element_blank(),
+    panel.background = element_blank(),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold")
+  ) + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  ) 
+```
+
+::: aside
+All theme elements that you can control can be found in the [`ggplot` documentation](https://ggplot2.tidyverse.org/reference/theme.html#arguments). There are a lot!
+:::
+
+## Creating your own theme
+
+```{r}
+#| echo: false
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  theme(
+    legend.position = "bottom",
+    panel.grid = element_blank(),
+    panel.background = element_blank(),
+    plot.title.position = "plot",
+    plot.title = element_text(face = "bold")
+  ) + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```
+
+## The before shot
+
+```{r}
+#| echo: false
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
+  geom_point(mapping = aes(colour = class)) + 
+  geom_smooth(method = "lm") + 
+  labs(
+    title = "Engine displacement and highway miles per gallon",
+    subtitle = "Values for seven different classes of cars",
+    x = "Engine displacement (L)",
+    y = "Highway miles per gallon"
+  )
+```

@@ -1,0 +1,76 @@
+---
+title: "Introduction to R and RStudio"
+subtitle: "GVPT399F: Power, Politics, and Data"
+format: 
+  revealjs:
+    slide-number: true
+    preview-links: auto
+    theme: solarized
+    embed-resources: true
+execute: 
+  echo: true
+  fig-align: "center" 
+---
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+```
+
+## Learning objectives for today
+
+1.  Introduction to R
+
+2.  Introduction to RStudio
+
+## Why R?
+
+-   A versatile programming language
+
+    -   All materials used in this course were produced using R, including the website and fancy slides
+
+-   Free and accessible!
+
+## R and RStudio
+
+::::: columns
+::: {.column width="50%"}
+### R
+
+R is a free and open-source programming language and software environment for statistical computing and graphics.
+:::
+
+::: {.column width="50%"}
+### RStudio
+
+RStudio is an integrated development environment (IDE) for the R programming language.
+:::
+:::::
+
+::: aside
+Instructions on how to download R and RStudio are provided in the [*Install or upgrade R and RStudio chapter*](https://happygitwithr.com/install-r-rstudio.html) in Jennifer Bryan's **Happy Git and GitHub for the useR**.
+:::
+
+## The R skills you will learn
+
+This course will introduce you to both statistics and R. Focusing on R, you will learn how to:
+
+1.  Import your data into R
+2.  Tidy your data
+3.  Transform it
+4.  Visualize it
+5.  Model patterns and relationships within it
+6.  Communicate your findings.
+
+## A Tour of RStudio
+
+![Source: [R4DS](https://r4ds.had.co.nz/workflow-scripts.html#workflow-scripts)](img/rstudio-console.png){fig-align="center"}
+
+## Summary
+
+This session you:
+
+1.  Learnt about new data science tools to help you conduct replicable and reproducible political science research
+
+2.  Set up your data science tools
